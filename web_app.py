@@ -29,10 +29,11 @@ chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--window-size=1920,1080")
 chrome_options.add_argument("--start-maximized")
 chrome_options.add_argument("--headless")
-chrome_options.add_argument("--disable-dev-shm-usage")
-chrome_options.add_argument("--no-sandbox")
-chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options)
+chrome_options.add_argument("--disable-dev-shm-usage") # for heroku comment for local
+chrome_options.add_argument("--no-sandbox") # for heroku comment for local
+chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN") # for heroku comment for local
+driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=chrome_options) # for heroku comment for local
+# for local
 #driver = webdriver.Chrome(executable_path=r"C:\KARTIK NEW\Projects\movie rating prediction\chromedriver.exe", chrome_options=chrome_options)
 
 def preprocessor(text):
